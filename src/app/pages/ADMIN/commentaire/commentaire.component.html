@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard </title>
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Booking</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search ">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+  
+        <h3>Admin</h3>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+       
+        <a  href="http://localhost:4200/admin" class="active">Dashboard</a>
+        <a href="http://localhost:4200/admin/users">Clients</a>
+        <a href="http://localhost:4200/admin/Owners">Owners</a>
+        <a href="http://localhost:4200/admin/Romms">Rooms</a>
+        <a href="http://localhost:4200/admin/Homes">Houses</a>
+        <a href="http://localhost:4200/admin/destinations">Destinations</a>
+        <a href="http://localhost:4200/admin/commentaire">Comments</a>
+
+      </div>
+    </nav>
+
+    <div class="main-body">
+
+      <div class="promo_card">
+        <h1>Comments list</h1>
+      
+   
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Contenu</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let a of Commentairelists">
+          <tr>
+            <th scope="row">-</th>
+            <td>{{a.contenu}}</td>
+            <td>
+                <button (click)="deleteroom(a.id)" href="" type="button" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  
+</body>
+
+</html>

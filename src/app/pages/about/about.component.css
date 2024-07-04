@@ -1,0 +1,95 @@
+.check-available {
+    background: #2a2b33;
+    box-shadow: 0px -5px 32px 9px rgba(0, 0, 0, 0.56);
+    height: 75px;
+}
+.check-available form {
+    border: 0px;
+    box-shadow: none;
+}
+.inn-com-form form label {
+    padding: 10px 20px;
+    font-size: 12px;
+    top: 6px;
+    left: 6px;
+    color: #6d6d6d;
+}
+.inn-com-form form input[type="submit"] {
+    background: #f4364f;
+    padding: 7px 25px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 2px;
+    width: 100%;
+    font-size: 16px;
+}
+
+.inn-com-form form input  {
+    border: 1px solid #cfcec4;
+    padding: 20px;
+    box-sizing: border-box;
+    height: 45px;
+    border-radius: 2px;
+    background: #fff;
+}
+
+
+
+
+
+.uu{
+    background-color: #a1944a;
+    height: 155px;
+    text-align: center;
+}
+.uu img {
+    width: 100px;
+}
+/********************/
+
+
+
+.about{
+    width: 50%;
+  
+    margin-top: 50px;
+    margin-left: 50px;
+}
+.Tunisia{
+    width: 50%;
+    margin-top: 50px;
+    margin-left: 300px;
+
+}
+.Tunisia img {
+    width: 500px;
+} 
+.ee{
+    display: flex;
+    margin-top: 100px;
+    justify-content: space-around;
+}
+.rr{
+    display: flex;
+}
+.ee img{
+    width: 75px;
+}
+p{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+}
+h1,h4{
+    font-family:Arial, Helvetica, sans-serif
+    ;
+    font-style: italic;
+}
+iframe{
+    width: 100%;
+}
+ht{
+    color: #2a2b33;
+   
+}

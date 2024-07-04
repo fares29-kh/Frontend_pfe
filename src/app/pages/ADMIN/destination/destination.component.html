@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard </title>
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Booking</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search ">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+  
+        <h3>Admin</h3>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+       
+        <a  href="http://localhost:4200/admin" class="active">Dashboard</a>
+        <a href="http://localhost:4200/admin/users">Clients</a>
+        <a href="http://localhost:4200/admin/Owners">Owners</a>
+        <a href="http://localhost:4200/admin/Romms">Rooms</a>
+        <a href="http://localhost:4200/admin/Homes">Houses</a>
+        <a href="http://localhost:4200/admin/destinations">Destinations</a>
+        <a href="http://localhost:4200/admin/commentaire">Comments</a>
+
+
+
+      </div>
+    </nav>
+
+    <div class="main-body">
+
+      <div class="promo_card">
+        <h1>Destinations list</h1>
+      
+        <button class="book  waves-light wr-re-btn" (click)="openModal()" href="!#" type="button" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Add destination</button>
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Name Destination</th>
+            <th scope="col">Information</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let a of Destinationlists">
+          <tr>
+            <th scope="row">-</th>
+            <td>{{a.nomDestination}}</td>
+            <td>{{a.information}}</td>
+            <td><a href="" class="btn btn-success">Update</a>
+                <a href="" class="btn btn-danger">Delete</a></td>
+          </tr>
+        </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  
+</body>
+
+</html>
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">
+                  Write the date of reservation</h5><button class="btn p-1" type="button" data-bs-dismiss="modal"
+                  aria-label="Close"><svg class="svg-inline--fa fa-times fa-w-11 fs--1" aria-hidden="true"
+                      focusable="false" data-prefix="fas" data-icon="times" role="img"
+                      xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+                      <path fill="currentColor"
+                          d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                      </path>
+                  </svg><!-- <span class="fas fa-times fs--1"></span> Font Awesome fontawesome.com --></button>
+          </div>
+          <div class="modal-body">
+              <div class="modal-body">
+                  <label class="form-label" for="form3Example3">destination name</label>
+                  <input type="text" [(ngModel)]="commentaireObject.NomDestination" id="form3Example3"
+                      class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                  <label class="form-label" for="form3Example3">image</label>
+                  <input type="text" [(ngModel)]="commentaireObject.images" id="form3Example3"
+                      class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                      <label class="form-label" for="form3Example3">Information</label>
+                      <input type="text" [(ngModel)]="commentaireObject.information" id="form3Example3"
+                          class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                          <label class="form-label" for="form3Example3">link for description</label>
+                          <input type="text" [(ngModel)]="commentaireObject.lienWikepedia" id="form3Example3"
+                              class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                      
+                  </div>
+          </div>
+          <div class="modal-footer">
+              <button class="btn btn-primary" (click)="submit()" type="button">Okay</button>
+              <button class="btn btn-outline-primary" type="button" (click)="onCloseHandled()"
+                  data-bs-dismiss="modal">Cancel</button>
+          </div>
+      </div>
+  </div>
+</div>

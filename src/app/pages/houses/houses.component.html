@@ -1,0 +1,127 @@
+
+<app-nav></app-nav>
+<div class="uu">
+<h1 >Booking Rooms</h1>
+<img src="../../../assets/img/hotel.png" alt="">
+</div>
+<div class="check-available">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inn-com-form">
+                    <form class="col s12">
+                        <div class="row">
+                            <div class="col s12 avail-title">
+                                <h4>CHECK AVAILABILITY</h4> </div>
+                        </div>
+                        <div class="row">
+                            <input class="rech" type="text" name ="search" [(ngModel)]="searchText" placeholder="Search by what u would ">
+             
+                            <div class="input-field col s12 m4 l2">
+                                </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="paragraphe">
+    <h5>
+        Welcome to our website for booking houses throughout Tunisia! Our platform offers a wide range of accommodations
+        to choose from, including cozy apartments, luxurious villas, and charming cottages. Browse our selection of
+        properties, filter your search by location and amenities, and book your perfect home away from home with just a
+        few clicks. Whether you're planning a romantic getaway or a family vacation, we've got you covered. Start
+        exploring now and make your next trip to Tunisia unforgettable!
+    </h5>
+</div>
+
+<ng-container *ngFor="let a of Houseslists | filter:searchText">
+    <div class="room">
+        <div class="ribbon ribbon-top-left"><span>{{a.nomMaison}}</span>
+        </div>
+        <!--ROOM IMAGE-->
+        <div class="r1 r-com" *ngFor="let item of a.images">
+            <img src="{{item.data}}" alt="" />
+        </div>
+        <!--ROOM RATING-->
+        <div class="r2 r-com">
+            <h5 class="categorie">{{a.categorie}}</h5>
+            <div class="r2-ratt"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                    class="fa fa-star"></i> <i class="fa fa-star"></i> <img src="images/h-trip.png" alt="" /> </div>
+            <ul>
+                <li>Max Adult : {{a.nbrAdulte}}</li>
+                <li>Max Child : {{a.nbrEnfant}}</li>
+            </ul>
+        </div>
+        <!--ROOM AMINITIES-->
+        <div class="r3 r-com">
+            <ul>
+                <li>City :  {{a.ville}}</li>
+                <li>Address :  {{a.adresse}}</li>
+                <li>Description :  {{a.description}}</li>
+            </ul>
+        </div>
+        <!--ROOM PRICE-->
+        <div class="r4 r-com">
+            <p>Price for 1 night</p>
+            <p><span class="room-price-1">{{a.prix}}$</span> <span class="room-price"></span>
+            </p>
+            <p>Non Refundable</p>
+        </div>
+        <!--ROOM BOOKING BUTTON-->
+        <div class="r5 r-com">
+            <div class="r2-available">Available</div>
+           <!-- <button class="inn-room-book" (click)="openModal(a.id)" data-bs-toggle="modal"
+                data-bs-target="#exampleModal" (click)="showModal = true">Book</button> -->
+                <button class="inn-room-book" routerLink="/HouseDetails//{{a.id}}">view More </button>
+        </div>
+    </div>
+
+
+
+</ng-container>
+<app-footer></app-footer>
+
+<!-- added by Dali -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Write the date of reservation</h5><button class="btn p-1" type="button" data-bs-dismiss="modal"
+                    aria-label="Close"><svg class="svg-inline--fa fa-times fa-w-11 fs--1" aria-hidden="true"
+                        focusable="false" data-prefix="fas" data-icon="times" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                        </path>
+                    </svg><!-- <span class="fas fa-times fs--1"></span> Font Awesome fontawesome.com --></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label class="form-label" for="form3Example3">Arrival Date</label>
+                    <input type="date" [(ngModel)]="reservationObject.date_debut" id="form3Example3"
+                        class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                    <label class="form-label" for="form3Example3">Departure Date</label>
+                    <input type="date" [(ngModel)]="reservationObject.date_fin" id="form3Example3"
+                        class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="submit()" type="button">Okay</button>
+                <button class="btn btn-outline-primary" type="button" (click)="onCloseHandled()"
+                    data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+.card {
+  /* width: 100%; */
+  /* margin-left: 10%; 
+   margin-right: 10%; */
+  margin-top: 0 auto;
+  margin-bottom: 0px;
+
+
+}
+
+.text-center {
+  color: rgb(2, 36, 6);
+}
+
+.img-fluid {
+  margin-top: 5cqi;
+}
+
+.alert {
+  color: red;
+  text-align: center;
+}

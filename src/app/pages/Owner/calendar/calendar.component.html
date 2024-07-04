@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- <head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard | By Code Info</title> -->
+
+<!-- Font Awesome Cdn Link -->
+<!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Booking</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search ">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+        <img src="../../../assets/img/fares.jpg" alt="">
+        <h4>Admin</h4>
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="http://localhost:4200/Owner" class="active">Dashboard</a>
+        <a href="http://localhost:4200/Owner/calendar">Calendar</a>
+        <a href="http://localhost:4200/Owner/reservations">reservations</a>
+        <a href="http://localhost:4200/Owner/MyRoom">My Room</a>
+        <a href="http://localhost:4200/Owner/MyHouse">My House</a>
+        <a href="http://localhost:4200/Owner/AddRoom">Add Room</a>
+        <a href="http://localhost:4200/Owner/AddHouse">Add House</a>
+
+      </div>
+    </nav>
+
+    
+    
+  </div>
+</body>
+
+</html> -->
+<div #calendarEl></div>
+
+<!-- added by Dali -->
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">
+          Confirmation</h5><button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><svg
+            class="svg-inline--fa fa-times fa-w-11 fs--1" aria-hidden="true" focusable="false" data-prefix="fas"
+            data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+            </path>
+          </svg><!-- <span class="fas fa-times fs--1"></span> Font Awesome fontawesome.com --></button>
+      </div>
+      <div class="modal-body">
+        <div class="modal-body">
+          Do you want really to {{state}} this reservation ?
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" (click)="updateReservation()" type="button">Okay</button>
+        <button class="btn btn-danger" type="button" (click)="onCloseHandled()" data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

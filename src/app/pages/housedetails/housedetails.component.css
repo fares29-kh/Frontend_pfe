@@ -1,0 +1,151 @@
+
+.hp-section .hp-section {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 70px;
+}
+.hp-sub-tit {
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 30px;
+    border-bottom: 1px solid #dfd2bf;
+}
+.hp-sub-tit h4 {
+    margin-top: 0px;
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+.hp-sub-tit h4 span {
+    font-family: 'Quicksand', sans-serif;
+    color: #8a6e35;
+    font-size: 24px;
+}
+.hp-sub-tit p 
+.hp-amini 
+.hp-amini ul {
+    margin-bottom: 0px;
+}
+.hp-sub-tit-block {
+    border-bottom: 1px solid #4a4640;
+}
+.hp-sub-tit-block h4 {
+    color: #fff;
+}
+.hp-sub-tit-block h4 span {
+    color: #ab9466;
+}
+.lp-ur-all-rat-block  .lp-ur-all-rat-block ul li {
+    border-bottom: 1px solid #4a4640;
+}
+.lp-ur-all-rat ul li {
+    position: relative;
+    overflow: hidden;
+    border-bottom: 1px solid #e2e2e2;
+    padding-top: 15px;
+    padding-bottom: 5px;
+}
+.lp-ur-all-rat ul {
+    margin-bottom: 0px;
+}
+.lp-ur-all-rat  .lp-ur-all-rat h5 {
+    padding: 15px 0px 5px 0px;
+    background: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    text-transform: uppercase;
+}
+.lp-ur-all-rat {
+    position: relative;
+    overflow: hidden;
+}
+/* /////////////////// */
+
+.wr-re-btn {
+    background: #f4364f;
+    padding: 12px 25px;
+    color: #fff;
+    /* text-transform: uppercase; */
+    font-weight: 600;
+    font-family: 'Quicksand', sans-serif;
+    border-radius: 50px;
+    font-size: 18px;
+    margin-top: 20px;
+}
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
+    font-size: 14px;
+}
+
+
+
+.idk{
+    margin-left: 100%;
+    margin-right: 50%;
+    height: 20pc;
+    width: 40PC;
+}
+.yy{
+    width:100%;
+}
+
+
+
+div {
+    display: block;
+}
+
+.pic{
+   
+    border-width: 2px;
+   
+
+    margin-left: 5%;
+    margin-right: 5%; 
+    
+   
+}
+.one{
+    background-color: #0d0b18e5;
+}
+
+
+
+ul {
+    list-style-type: square;
+  }
+
+
+
+  textarea {
+    float: left;
+    width: 98%;
+    margin-top: 6px;
+    margin-left: 1pc;
+    margin-right: 1pc;
+  }
+    
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+
+  .waves-effect{
+    margin-left: 90%;
+  }
+  .test99{
+    margin-left: 20%;
+  }

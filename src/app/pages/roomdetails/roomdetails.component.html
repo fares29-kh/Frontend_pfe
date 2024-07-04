@@ -1,0 +1,99 @@
+<app-nav></app-nav>
+<div class="one">
+<div class="pic">
+   <!-- <img src="../../../assets/img/ciudad-maderas-MXbM1NrRqtI-unsplash (1).jpg" alt=""> -->
+   
+
+
+</div>
+</div>
+<div>
+    <h4> <img src="../../../assets/img/logoroom.png" alt="">  Room Name : {{roomlists?.nomChambre}}</h4>
+    <ul>
+        <li> <img src="../../../assets/img/city (2).png" alt="">  City : {{roomlists?.ville}}</li>
+        <li><img src="../../../assets/img/adresse (1).png" alt="">  Adresse : {{roomlists?.adresse}}</li>
+        <li><img src="../../../assets/img/categorie (1).png" alt="">  Category: {{roomlists?.categorie}}</li>
+        <li><img src="../../../assets/img/adult (1).png" alt="">  Adult : {{roomlists?.nbrAdulte}}</li>
+        <li><img src="../../../assets/img/bebe (1).png" alt="">  Children : {{roomlists?.nbrEnfant}}</li>
+        <li><img src="../../../assets/img/prix (1).png" alt="">  Price : {{roomlists?.prix}}£</li>
+    </ul>
+    <div class="r1 r-com" *ngFor="let item of roomlists.images">
+        <img src="{{item.data}}" class="dd" alt="" />
+    
+    </div>
+    
+</div>
+<div> <button class="book  waves-light wr-re-btn" (click)="openModal(IdChambre)" href="!#" type="button" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Book This Room</button> </div>
+<a class="message" href="http://localhost:4200/chat/{{ownerId}}"><button>Contact the Owner</button></a>
+<div class="hp-section last-sec-spa">
+    <div class="hp-sub-tit">
+        <h4><span>USER</span> REVIEWS</h4>
+        <p>Aliquam id tempor sem. Cras molestie risus et lobortis congue. Donec id est consectetur, cursus tellus at, mattis lacus.</p>
+    </div>
+    <div class="lp-ur-all-rat">
+        <ul><ng-container *ngFor="let a of commentairelists">
+            <li>
+                <div class="lr-user-wr-con">
+                    <h6>Name</h6>  
+                    <p>{{a.contenu}}</p>
+                    <span class="lr-revi-date">{{a.date}}</span>
+                </div>
+            </li>
+        </ng-container>
+        </ul> 
+        <div class="col-75">
+            <textarea id="subject" [(ngModel)]="commentaireObject.contenu"  name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
+     
+        <button class="waves-effect waves-light wr-re-btn" (click)="submit()" href="!#" type="button" data-toggle="modal" data-target="#commend"><i class="fa fa-edit"></i> Add Comment</button> </div>
+    </div>
+    <div class="col-md-4">
+        <div class="bot-gal h-vid">
+            <h4>Video Gallery</h4>
+            <iframe  class="idk"src="https://www.youtube.com/embed/mG4G8crGQ34?autoplay=0&showinfo=0&controls=0"  allowfullscreen></iframe>
+            <h5>MAP</h5>
+            
+        </div>
+    </div>
+      <iframe class="yy" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d207520.28637936647!2d10.699738225170286!3d35.63994063996518!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x130223b40c7ad1b3%3A0xc3b27208e8051b2!2sInstitut%20Sup%C3%A9rieur%20de%20%C3%89tudes%20Technologiques!5e0!3m2!1sfr!2stn!4v1679628818741!5m2!1sfr!2stn" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<!-- lsjcksy(trhhgttttttttttttttttttttttttttttttttttttttttttthttttttttttthyhyhhhhhhhhhhhhhhhhhhhhhhhhtttttttttttttttttttj) -->
+
+
+
+
+
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">
+                    Write the date of reservation</h5><button class="btn p-1" type="button" data-bs-dismiss="modal"
+                    aria-label="Close"><svg class="svg-inline--fa fa-times fa-w-11 fs--1" aria-hidden="true"
+                        focusable="false" data-prefix="fas" data-icon="times" role="img"
+                        xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+                        <path fill="currentColor"
+                            d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+                        </path>
+                    </svg><!-- <span class="fas fa-times fs--1"></span> Font Awesome fontawesome.com --></button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <label class="form-label" for="form3Example3">Arrival Date</label>
+                    <input type="date" [(ngModel)]="reservationObject.date_debut" id="form3Example3"
+                        class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                    <label class="form-label" for="form3Example3">Departure Date</label>
+                    <input type="date" [(ngModel)]="reservationObject.date_fin" id="form3Example3"
+                        class="form-control form-control-lg" name="email" placeholder="Enter a valid email address" />
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" (click)="submitbook()" type="button">Okay</button>
+                <button class="btn btn-outline-primary" type="button" (click)="onCloseHandled()"
+                    data-bs-dismiss="modal">Cancel</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

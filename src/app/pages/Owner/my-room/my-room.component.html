@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard | By Code Info</title>
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Booking</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search ">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+
+   
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a href="http://localhost:4200/Owner" class="active">Dashboard</a>
+        <a href="http://localhost:4200/Owner/calendar">Calendar</a>
+        <a href="http://localhost:4200/Owner/reservations">reservations</a>
+        <a href="http://localhost:4200/Owner/MyRoom">My Rooms</a>
+        <a href="http://localhost:4200/Owner/MyHouse">My Houses</a>
+
+
+
+
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <h1>Welcome to BOOKING</h1>
+      <div class="promo_card">
+        <h2>My Rooms</h2>
+
+        <button class="inn-room-book btn btn-primary" (click)="openModal()" data-bs-toggle="modal"
+          data-bs-target="#exampleModal" (click)="showModal = true">Add Room</button>
+
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">House Name</th>
+            <th scope="col">Categorie</th>
+            <th scope="col">nbr enfant</th>
+            <th scope="col">nbr adult</th>
+            <th scope="col">ville</th>
+            <th scope="col">Adresse</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+
+          <ng-container *ngFor="let a of roomlists">
+            <tr>
+              <th scope="row">-</th>
+              <td>{{a.nomChambre}}</td>
+              <td>{{a.categorie}}</td>
+              <td>{{a.nbrEnfant}}</td>
+              <td>{{a.nbrAdulte}}</td>
+              <td>{{a.ville}}</td>
+              <td>{{a.adresse}}</td>
+              <td><a href="" class="btn btn-success">Update</a>
+                <button (click)="deletechambre(a.id)" href="" type="button" class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+
+</html>
+<div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':display}">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="exampleModalLabel">
+          Add Room</h4><button class="btn p-1" type="button" data-bs-dismiss="modal" aria-label="Close"><svg
+            class="svg-inline--fa fa-times fa-w-11 fs--1" aria-hidden="true" focusable="false" data-prefix="fas"
+            data-icon="times" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 352 512" data-fa-i2svg="">
+            <path fill="currentColor"
+              d="M242.72 256l100.07-100.07c12.28-12.28 12.28-32.19 0-44.48l-22.24-22.24c-12.28-12.28-32.19-12.28-44.48 0L176 189.28 75.93 89.21c-12.28-12.28-32.19-12.28-44.48 0L9.21 111.45c-12.28 12.28-12.28 32.19 0 44.48L109.28 256 9.21 356.07c-12.28 12.28-12.28 32.19 0 44.48l22.24 22.24c12.28 12.28 32.2 12.28 44.48 0L176 322.72l100.07 100.07c12.28 12.28 32.2 12.28 44.48 0l22.24-22.24c12.28-12.28 12.28-32.19 0-44.48L242.72 256z">
+            </path>
+          </svg><!-- <span class="fas fa-times fs--1"></span> Font Awesome fontawesome.com --></button>
+      </div>
+      <div class="modal-body">
+        <div class="form-group">
+          <label class="form-label" for="form3Example3">Room Name</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.nomChambre" name="id" />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Adress</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.adresse" name="prenom" />
+        </div>
+
+        <div class="form-group">
+          <label for="">City</label>
+          <select [(ngModel)]="chambre.ville" name="region" class="form-select" class="form-control form-control-lg"
+            aria-label="Default select example">
+            <option value="" disabled selected hidden> </option>
+            <option value="Monastir">Monastir</option>
+            <option value="Sousse">Sousse</option>
+            <option value="Mahdia">Mahdia</option>
+            <option value="Tunis">Tunis</option>
+            <option value="Nabeul">Nabeul</option>
+            <option value="Bizert">Bizert</option>
+            <option value="Gafsa">Gafsa</option>
+            <option value="Ariana">Ariana</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="">Description</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.description" name="etablissement" />
+        </div>
+
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Categorie</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.categorie" name="dateF" required />
+        </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Price</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.prix" name="datedebut" required />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Adult Number</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.nbrAdulte" name="datedebut" required />
+        </div>
+
+
+
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Children Number</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.nbrEnfant" name="dateF" required />
+        </div>
+
+
+
+
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Video Link</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.lienVideo" name="datedebut" required />
+        </div>
+
+
+
+
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Map Link</label>
+          <input type="text" class="form-control form-control-lg" id="exampleFormControlInput1"
+            [(ngModel)]="chambre.lienCarte" name="dateF" required />
+        </div>
+        <div class="form-group">
+          <label for="exampleFormControlInput1">Images</label>
+          <input type="file" (change)="picked($event)" id="exampleFormControlInput1" name="images" />
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-primary" type="button" (click)="submit()">Okay</button>
+        <button class="btn btn-outline-primary" type="button" (click)="onCloseHandled()"
+          data-bs-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

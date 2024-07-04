@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Admin Dashboard | By Code Info</title>
+
+  <!-- Font Awesome Cdn Link -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="logo">
+      <a href="#">Booking</a>
+      <div class="search_box">
+        <input type="text" placeholder="Search ">
+        <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+      </div>
+    </div>
+
+    <div class="header-icons">
+      <i class="fas fa-bell"></i>
+      <div class="account">
+     
+
+      </div>
+    </div>
+  </header>
+  <div class="container">
+    <nav>
+      <div class="side_navbar">
+        <span>Main Menu</span>
+        <a  href="http://localhost:4200/Owner" class="active">Dashboard</a>
+        <a href="http://localhost:4200/Owner/calendar">Calendar</a>
+        <a href="http://localhost:4200/Owner/reservations">reservations</a>
+        <a href="http://localhost:4200/Owner/MyRoom">My Rooms</a>
+        <a href="http://localhost:4200/Owner/MyHouse">My Houses</a>
+
+      </div>
+    </nav>
+
+    <div class="main-body">
+      <h1>Welcome to BOOKING</h1>
+      <div class="promo_card">
+        <h2>Reservations list</h2>
+
+      </div>
+
+      <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">client</th>
+            <th scope="col">maison</th>
+            <th scope="col">chambre</th>
+            <th scope="col">Arrival date</th>
+            <th scope="col">Departure date</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <ng-container *ngFor="let a of reservationlists">
+            <tr>
+              <th scope="row">-</th>
+              <td>{{a.username}}</td>
+              <td>{{a.maisonName}}</td>
+              <td>{{a.chambreName}}</td>
+              <td>{{a.date_debut}}</td>
+              <td>{{a.date_fin}}</td>
+       
+              <td>
+                <button   (click)="deletereservation(a.id)" href="" type="button" class="btn btn-danger">Delete</button>
+                <a class="message" href="http://localhost:4200/chat/{{a.userId}}"><button class="btn btn-outline-primary">Contact the client</button></a>
+              </td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+
+
+  </div>
+  
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<app-nav></app-nav>
+<div class="uu">
+<h1 >Destinations</h1>
+<img src="../../../assets/img/destination.png" alt="">
+</div>
+<div class="check-available">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="inn-com-form">
+                 <p>fdfd</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="paragraphe">
+    <h3>choose the best destination</h3><h5>
+    Explore the beautiful country of Tunisia with our wide selection of accommodations available for rent. From the stunning beaches of Hammamet and Sousse to the historical sites of Carthage and Tunis, we offer a variety of destinations to choose from. Whether you're looking for a cozy room in the heart of the medina or a spacious villa with a sea view, we have something to suit your needs. Each destination offers its own unique blend of culture, history, and natural beauty, waiting to be discovered. Browse our selection of destinations and find your perfect vacation spot in Tunisia today!
+</h5></div>
+
+<ng-container *ngFor="let a of Destinationlists">
+<div class="room">
+    <div class="ribbon ribbon-top-left"><span>{{a.nomDestination}}</span>
+    </div>
+    <!--ROOM IMAGE-->
+    <div class="r1 r-com"><img src="{{a.images}}" alt="" />
+    </div>
+    <!--ROOM RATING-->
+    <div class="r2 r-com">
+<h4>Description
+    
+</h4>
+        <div class="r2-ratt"> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <img src="images/h-trip.png" alt="" />  </div>
+      {{a.description}}
+    </div>
+
+
+    
+    <!--ROOM BOOKING BUTTON-->
+    <div class="r5 r-com">
+
+         <a href="{{a.lienWipekedia}}" class="inn-room-book">Show more</a> </div>
+</div>
+</ng-container>
+<app-footer></app-footer>
